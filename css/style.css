@@ -61,7 +61,7 @@ header {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 45px;
 }
 
 nav li {
@@ -76,23 +76,34 @@ nav a {
     text-decoration: none;
     color: #3D2C1E;
     font-size: 17px;
-    padding: 8px 14px;
-    border-radius: 18px;
-    transition: all 0.3s ease;
+    padding: 4px 0;
+    position: relative;
+    transition: all 0.5s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #C87A5A;
+    transition: all 0.5s ease;
+    transform: translateX(-50%);
 }
 
 nav a:hover {
-    background-color: #F5E6D3;
     color: #C87A5A;
 }
 
-nav li.active a {
-    background-color: #C87A5A;
-    color: #FFFFFF;
+nav a:hover::after {
+    width: 100%;
 }
 
-nav li.active .menu-icon {
-    filter: brightness(0) invert(1);
+nav li.active a {
+    color: #C87A5A;
+    font-weight: 600;
 }
 
 /* Секция с фото */
